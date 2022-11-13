@@ -1,0 +1,10 @@
+<h2 class="title">Rick and Morty episodes</h2>
+<div class="episodes">
+  <app-episode *ngFor="let episode of episodes" [episode]="episode"></app-episode>
+</div>
+<mat-paginator
+  [length]="totalPages"
+  [pageSize]="20"
+  aria-label="Select page">
+</mat-paginator>
+
