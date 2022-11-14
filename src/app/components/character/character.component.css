@@ -1,0 +1,15 @@
+.character {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+
+  box-sizing: border-box;
+  padding: 5%;
+  margin-bottom: 5%;
+  background-color: #f5f4f4;
+}
+
+.character > div {
+  margin-top: 2%;
+}

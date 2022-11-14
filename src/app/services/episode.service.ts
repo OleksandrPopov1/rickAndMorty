@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 import {IEpisode, IPaginatedData} from "../interfaces";
-import {urls} from "../configs/urls";
+import {urls} from "../configs";
 
 @Injectable({
   providedIn: 'root'

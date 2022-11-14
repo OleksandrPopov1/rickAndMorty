@@ -1,9 +1,9 @@
 import {AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {ActivatedRoute, Router} from "@angular/router";
+import {map} from "rxjs";
 
 import {IEpisode, IPaginatedData} from "../../interfaces";
-import {map} from "rxjs";
 
 @Component({
   selector: 'app-episodes',
@@ -13,7 +13,7 @@ import {map} from "rxjs";
 export class EpisodesComponent implements OnInit, AfterViewInit {
 
   episodes: IEpisode[];
-  totalPages: number
+  totalEpisodes: number
 
   @ViewChild(MatPaginator)
   paginator: MatPaginator
@@ -27,11 +27,11 @@ export class EpisodesComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.activatedRoute.queryParams.subscribe(({page}) => {
-      this.paginator.pageIndex = page - 1
-      this.detectorRef.detectChanges()
+      this.paginator.pageIndex = page - 1;
+      this.detectorRef.detectChanges();
     })
     this.paginator.page.subscribe((page) => {
-      this.router.navigate([], {queryParams: {page: page.pageIndex + 1}})
+      this.router.navigate([], {queryParams: {page: page.pageIndex + 1}});
     })
 
   }
@@ -40,9 +40,8 @@ export class EpisodesComponent implements OnInit, AfterViewInit {
     this.activatedRoute.data.pipe(
       map(value => value['data'] as IPaginatedData)
     ).subscribe((value) => {
-      this.totalPages = value.info.pages;
+      this.totalEpisodes = value.info.count;
       this.episodes = value.results;
     })
   }
-
 }

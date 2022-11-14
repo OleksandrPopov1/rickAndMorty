@@ -1,1 +1,8 @@
-<p>episode-details works!</p>
+<div *ngIf="episode" class="episodeDetails">
+  <div class="headerDetails">
+    <h2>The old Man and the Seat</h2>
+    <span><b>Episode:</b> {{episode.episode}}</span>
+    <span><b>Air date:</b> {{episode.air_date}}</span>
+  </div>
+  <app-characters [episode]="episode"></app-characters>
+</div>

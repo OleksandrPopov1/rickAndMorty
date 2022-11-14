@@ -1,0 +1,16 @@
+.episodeDetails {
+  background-color: snow;
+}
+
+.headerDetails {
+  text-align: center;
+  background-color: #fafa3c;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 1%;
+}
+
+.headerDetails > span {
+  display: block;
+  margin-bottom: 5px;
+}

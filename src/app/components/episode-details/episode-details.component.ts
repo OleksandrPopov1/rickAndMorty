@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {EpisodeService} from "../../services/episode.service";
+
+import {EpisodeService} from "../../services";
 import {IEpisode} from "../../interfaces";
 
 @Component({

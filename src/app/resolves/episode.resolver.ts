@@ -7,7 +7,7 @@ import {
 import {Observable} from 'rxjs';
 
 import {IPaginatedData} from "../interfaces";
-import {EpisodeService} from "../services/episode.service";
+import {EpisodeService} from "../services";
 
 @Injectable({
   providedIn: 'root'

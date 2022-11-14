@@ -1,4 +1,12 @@
-.ownTitle{
+.ownTitle {
   background-color: blue;
   margin: 0;
+  box-sizing: border-box;
+  padding: 2%;
+}
+
+.ownTitle > a,
+.ownTitle > a:active {
+  text-decoration: none;
+  color: black;
 }

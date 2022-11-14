@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+
+import {ICharacter, IEpisode} from "../../interfaces";
+import {CharacterService} from "../../services";
 
 @Component({
   selector: 'app-characters',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharactersComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  episode: IEpisode;
+
+  characters: ICharacter[];
+
+  constructor(private characterService: CharacterService) {
+  }
 
   ngOnInit(): void {
+    const characterIds = this.episode.characters.map(value => value.split('/')[5]).join();
+    this.characterService.getByIds(characterIds).subscribe(value => this.characters = value);
   }
 
 }

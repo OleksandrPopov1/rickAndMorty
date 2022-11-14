@@ -15,10 +15,8 @@ const routes: Routes = [
         runGuardsAndResolvers: 'paramsOrQueryParamsChange',
         resolve: {data: EpisodeResolver},
         component: EpisodesComponent,
-        children: [
-          {path: ':id', component: EpisodeDetailsComponent}
-        ]
-      }
+      },
+      {path: ':id', component: EpisodeDetailsComponent}
     ]
   }
 ];
